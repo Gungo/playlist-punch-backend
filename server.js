@@ -14,10 +14,12 @@ app.get('/login', function (req, res) {
       response_type: 'code',
       client_id: process.env.SPOTIFY_CLIENT_ID,
       // Make sure scopes are up to date.
-      scope: 'streaming user-read-currently-playing user-library-modify \
+      scope: 'streaming user-read-currently-playing user-library-read user-library-modify \
               user-read-playback-state user-modify-playback-state user-read-playback-position \
-              user-library-read user-read-email user-read-private \
-              user-read-recently-played',
+              user-read-email user-read-private user-read-recently-played \
+              playlist-read-private playlist-read-collaborative \
+              playlist-modify-public playlist-modify-private',
+
       redirect_uri
     }))
 })
